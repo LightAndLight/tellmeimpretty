@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import random
 from colorscheme import ColorScheme
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 phrases = [
     "Hanging around you gives me sunburn.",
@@ -27,14 +27,14 @@ colors = [
     ColorScheme("#f4fff4", "#b8ccc0"), #g b
     ]
 
-@app.route("/")
+@application.route("/")
 def main():
     color = random.choice(colors)
     return render_template("main.html", color=color)
 
-@app.route("/phrase")
+@application.route("/phrase")
 def phrase():
     return random.choice(phrases)
 
 if __name__ == "__main__":
-    app.run()
+    application.run("0.0.0.0")

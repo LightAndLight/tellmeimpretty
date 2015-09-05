@@ -5,7 +5,7 @@ var phrase = "";
 
 function send_request(){
     phrase = "";
-    request.open("GET", "/phrase", true);
+    request.open("GET", "phrase", true);
     request.send();
 }
 
